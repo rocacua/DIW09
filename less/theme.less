@@ -9,6 +9,466 @@
  * https://github.com/divshot/themestrap
  */
 
+//Importar la fuente de google
+@import url(https://fonts.googleapis.com/css?family=Nunito:400,300,700);
+
+//Importar font-awesome
+@import "font-awesome.less";
+
+//Importar boilrplate
+@import "normalize.less";
+@import "main-boilrplate.less";
+
+//Importar bootstrap
 @import "bootstrap.less";
 
+
 // Add CSS Customizations to your theme here.
+
+//Typografias
+h1,h2,h3,h4,h5,h6,strong,label { 
+    font-family: 'Nunito', Arial, sans-serif; 
+    font-weight: 700; 
+    padding-bottom: 0.5em;
+}
+h1 {
+    font-size: 24px;
+}
+h2 {
+    font-size: 20px;
+}
+h3 {
+    font-size: 18px;
+}
+h4 {
+    font-size: 16px;
+}
+h5 {
+    font-size: 14px;
+}
+h6 {
+    font-size: 14px;
+}
+label {
+    font-size: 14px;
+}
+a:hover, a:visited, a:active, a:focus {
+    //Parece ser que underline en la fuente tunito se combierte en un tachado
+    //Por ello los subrallados de los enlaces los haré sobre ellos
+    text-decoration: overline;
+}
+
+//Sprite
+.stitches-sprite(@x: 0, @y: 0, @width: 0, @height: 0) {
+    background-position: @x @y;
+    width: @width;
+    height: @height;
+}
+
+.sprite {
+    background-image: url(../img/iconos/spritesheet.png);    background-repeat: no-repeat;
+    display: block;
+
+    &.sprite-icono-1-inicio {
+        .stitches-sprite(0, 0, 30px, 30px);
+    }
+
+    &.sprite-icono-2-presentacion {
+        .stitches-sprite(-30px, 0, 30px, 30px);
+    }
+
+    &.sprite-icono-3-porfolio {
+        .stitches-sprite(0, -30px, 30px, 30px);
+    }
+
+    &.sprite-icono-4-contacto {
+        .stitches-sprite(-30px, -30px, 30px, 30px);
+    }
+
+    &.sprite-icono-5-facebook_24 {
+        .stitches-sprite(-60px, 0, 24px, 24px);
+    }
+
+    &.sprite-icono-6-google {
+        .stitches-sprite(-60px, -24px, 24px, 24px);
+    }
+
+    &.sprite-icono-7-twitter {
+        .stitches-sprite(-60px, -48px, 24px, 24px);
+    }
+}
+
+//ELEMENTOS
+//Encabezado
+.difuminado(@inicio-dif: @gray-darker; @fin-dif: @gray-dark; @texto-c: @label-color; @posicion: bottom; @positionFron: top) {
+    background-color:@inicio-dif;
+    background-image: linear-gradient(to @posicion, @inicio-dif 0%, @fin-dif 51%);
+    background-image:-moz-linear-gradient(to @posicion, @inicio-dif 70%, @fin-dif 100%);
+    background-image:-webkit-linear-gradient(to @posicion, @inicio-dif 0%, @fin-dif 51%);
+    background-image:-ms-linear-gradient(to @posicion, @inicio-dif 0%, @fin-dif 51%);
+    background-image:-webkit-gradient(
+        linear,
+        left positionFron,
+        left @posicion,
+        color-stop(0, @inicio-dif ),
+        color-stop(0.51, @fin-dif)
+    );
+    color: @texto-c;
+}
+
+#encabezado {
+    .difuminado;
+    text-align: center;
+    .logo {
+        display: block;
+        width: 60px;
+        height: 60px;
+        position: absolute;
+        background-image: url(../img/iconos/logo_pandaweb-min.png);
+        background-repeat: no-repeat;
+        background-position: left top;
+    }
+    header {
+        width: 60%;
+        text-align: left;
+        margin: auto;
+        overflow: hidden;
+        h1 {
+            margin: 0;
+            padding: 0;
+        }
+        p {
+            //Devido a que la fuente es de caja baja se queda baja con respecto a otros elementos
+            //Para solucionarlo hago un marjen superior negativo para que suba 
+            margin-top: -0.4em;
+        }
+    }
+    nav {
+        text-align: center;
+    }
+    nav ul {
+        padding: 0;
+        width: 120px;
+        margin: auto;
+        text-align: center;
+    }
+    nav ul li {
+        .difuminado(@label-color, @gray-lighter, @close-color);
+        width: 120px;
+        height: 30px;
+        padding-right: 4px;
+        text-align: right;
+        list-style-type: none;
+        position: relative;
+        
+        //display: inline-block;
+        .sprite {
+            position: absolute;
+            left: 0;
+        }
+        a {
+            display: block;
+            width: 100%;
+            color: @close-color;
+            vertical-align: sub;
+        }
+        &.active {
+            .difuminado(@brand-primary, @gray-lighter, @label-color);
+            a {
+               color: @label-color;
+            }
+        }
+    }
+    .socialmedia {
+        color:  @label-color;
+        position: absolute;
+        right: 5px;
+        top: 0;
+        a {
+            display: block;
+            margin-bottom: 10px;
+        }
+    }
+}
+
+
+//Pie
+html {
+    position: relative;
+    min-height: 100%;
+}
+body {
+    //El margen inferior coresponde a la altura del pie
+    margin-bottom: 100px;
+}
+footer.principal {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    //El pie tenf¡drá una altura fija que corresponde al margen del body
+    height: 100px;
+    overflow: hidden;
+    .difuminado(@gray-darker, @gray-dark, @label-color, top, bottom);
+    text-align: left;
+    p, ul {
+        margin: 10px 30px 10px 10px;
+    }
+    ul {
+        padding-left: 0;
+    }
+    ul li {
+        padding-right: 4px;
+        text-align: right;
+        list-style-type: none;
+        position: relative;
+        display: inline-block;
+    }
+    a {
+        color: @gray-lighter;
+    }
+    .socialmedia {
+        color:  @label-color;
+        position: absolute;
+        right: 5px;
+        top: 0;
+        a {
+            display: block;
+            margin-bottom: 10px;
+        }
+    }
+}
+
+//Formularios
+form {
+    width: 100%;
+    label {
+        width: 100%;
+        .sublabel {
+            display: inline-block;
+            width: 25%;
+            margin-right: 1%;
+        }
+        input[type=text],
+        input[type=email],
+        input[type=tel] {
+            display: inline-block;
+            width: 70%;
+            margin-left: 1%;
+        }
+    }
+    textarea {
+        display: block;
+        width: 100%;
+        height: 100px;
+        margin: -10px 0 10px 0;
+    }
+    button.btn {
+        padding: 0 12px 6px 12px;
+        margin: 10px;
+    }
+    
+    .exito {
+        background-color: @brand-success;
+        text-align: center;
+        padding-bottom: 20px;
+        font-size: 12px;
+    }
+}
+
+//Elementos comunes
+
+.container {
+    h4 {
+        text-align: center;
+        margin: 0;
+    }
+    h2, h3 {
+        .difuminado;
+        text-align: center;
+        a {
+            color: @gray-lighter;
+        }
+    }
+    .imgWeb {
+        display: block;
+        margin-bottom: 10px;
+    }
+}
+
+
+#popup {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 9;
+    background-color: @popover-border-color;
+    #popConten {
+        background-color: @label-color;
+        width: 80%;
+        height: 80%;
+        margin: auto;
+        margin-top: 30px;
+        padding: 1%;
+        border-radius: 20px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        .close {
+            //margin-top: -10px;
+            //margin-right: -10px;
+            margin-top: -1%;
+            margin-right: -1%;
+            padding: 0 15px 15px 15px;
+            border-radius: 50%;
+            border: 1px solid @gray-darker;
+            background-color: @label-color;
+        }
+        h2 {
+            margin-top: 40px;
+        }
+        p {
+            text-align: justify;
+        }
+    }
+}
+
+.center-text {
+    text-align: center!important;
+}
+
+.carousel-caption {
+    background-color: @carousel-textpanel-color;
+}
+.carousel-inner .item img {
+    margin: auto;
+}
+section article.media {
+    height: 80px;
+    overflow: visible;
+}
+
+img {
+    max-width: 100%;
+}
+
+//Video responsive
+.videoWrapper {
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	padding-top: 25px;
+	height: 0;
+}
+.videoWrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+iframe{
+    border: 0;
+}
+
+//Enlace la documentación
+a {
+    .fa.fa-file-pdf-o {
+        color: @brand-danger;
+        background-color: @label-color;
+        font-size: 20px;
+        vertical-align: baseline;
+    }
+}
+
+//Responsive
+//Aplicado a anchura mallor de 320px (movil pequeño)
+@media (min-width: 320px) {
+}
+//Aplicado a anchura mallor de 480px (movil)
+@media (min-width: @screen-xs-min) {
+    #encabezado {
+        .socialmedia {
+            a {
+                display: inline;
+            }
+            .sprite {
+                display: inline-block;
+                margin-top: 5px;
+            }
+        }
+        nav ul {
+            width: 100%;
+            li {
+                    display: inline-block;
+            }
+        }
+    }
+    .container section {
+        float: none;
+        clear: both;
+        article {
+            float: left;
+            width: 48%;
+            margin: 1%;
+        }
+        article.art1col {
+            float: none;
+            width: 100%;
+            margin: 0;
+        }
+    }
+    footer.principal{
+        p {
+            text-align: center;
+            margin: 10px;
+        }
+        .socialmedia {
+            a {
+                display: inline;
+            }
+            .sprite {
+                display: inline-block;
+                margin-top: 5px;
+            }
+        }
+    }
+}
+//Aplicado a anchura mallor de 768px (tablet)
+@media (min-width: @screen-sm-min) {
+    .container section article {
+        float: left;
+        width: 31.3%;
+        margin: 1%;
+    }
+    article.art2col {
+        float: left;
+        width: 48%;
+        margin: 1%;
+    }
+}
+//Aplicado a anchura mallor de 992px (escritorio)
+@media (min-width: @screen-md-min) {
+    #encabezado header {
+        p {
+            text-align: center;
+            margin-top: -1em;
+        }
+    }
+    .container section {
+        article {
+            float: left;
+            width: 23%;
+            margin: 1%;
+        }
+        article.art3col {
+            float: left;
+            width: 31.3%;
+            margin: 1%;
+        }
+    }
+}
+//Aplicado a anchura mallor de 1200px (escritorio ancho)
+@media (min-width: @screen-lg-min) {
+    
+}

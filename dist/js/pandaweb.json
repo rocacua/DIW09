@@ -1,0 +1,71 @@
+[
+    
+    {
+        "nombre": "btdeviaje",
+        "URL": "http://www.btdeviaje.com/",
+        "razon": "Olimpia Zaragoza",
+        "descripcion": "La mayorista de viajes, especializada en grupos y circuitos, desarrollada en entorno Zend Framework."
+    },
+    {
+        "nombre": "vacacioneschollo",
+        "URL": "http://www.vacacioneschollo.com/",
+        "razon": "Marfonder",
+        "descripcion": "Venta de viajes online especialista en chollos."
+    },
+    {
+        "nombre": "ocanyaweb",
+        "URL": "http://ricardo.ocanyaweb.es/",
+        "razon": "Ricardo Ocaña",
+        "descripcion": "Página personal, desarrollada en entorno Zend Framework, donde expongo algunos trabajos anteriores tanto de web, diseño gráfico, ilustración y alguna que otra cosa más."
+    },
+    {
+        "nombre": "aikipanda",
+        "URL": "http://aikipanda.ocanyaweb.es/",
+        "razon": "Ricardo Ocaña",
+        "descripcion": "Blog, desarrollado en wordpress, en donde hablo de programación, diseño gráfico y artes marciales."
+    },
+    {
+        "nombre": "open",
+        "URL": "http://open.ocanyaweb.es/",
+        "razon": "Gimnasio Open Las Fuentes",
+        "descripcion": "Web tarjeta del Gimnasio Open Las Fuentes."
+    },
+    {
+        "nombre": "kansenkan",
+        "URL": "http://www.kansenkan.org/",
+        "razon": "Kansenkan",
+        "descripcion": "Web del grupo con que practico Aikido, desarrollada con el CMS Drupal."
+    },
+    {
+        "nombre": "travelmar",
+        "URL": "http://www.travelmar.com/",
+        "razon": "Ekoalfa 4 SA",
+        "descripcion": "La mayorista de viajes, desarrollada en entorno Zend Framework, la empresa se encuentra actualmente en extinción, por lo que ya tiene la mayoría de sus servicios inoperativos."
+    },
+    {
+        "nombre": "destinoplayas",
+        "URL": "http://ricardo.ocanyaweb.es/assets/img/presentaciong/DestinoPlayas_cabecera.png",
+        "URL_OLD": "http://www.destinoplayas.com/",
+        "razon": "Ekoalfa 4 SA",
+        "descripcion": "Web extinta de reservas de hoteles y apartamentos de playa a particulares."
+    },
+    {
+        "nombre": "queroarte",
+        "URL": "http://ricardo.ocanyaweb.es/assets/img/presentaciong/QueroArte_cabecera.png",
+        "URL_OLD": "http://queroarte.com/",
+        "razon": "Enrrique Quero",
+        "descripcion": "Web del poeta y pintor aragonés Enrique Quero, que cree para difundir su obra de forma gratuita hasta que decidió dejar de hacerlo."
+    },
+    {
+        "nombre": "saz",
+        "URL": "http://www.astronomicadezaragoza.com/",
+        "razon": "SAZ",
+        "descripcion": "Web de la Sociedad Astronómica de Zaragoza en la que participé hasta hace pocos años."
+    },
+    {
+        "nombre": "Heroe de leyenda",
+        "URL": "https://youtu.be/HjIlpjwyxEk",
+        "razon": "Vivo Cantando",
+        "descripcion": "Aparición en el programa musical Vivo Cantando de Antena Aragón."
+    }
+]

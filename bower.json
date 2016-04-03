@@ -1,12 +1,12 @@
 {
-  "name": "bootstrap-theme-themestrap-sample",
+  "name": "bootstrap-theme-pandaweb",
   "version": "0.0.1",
   "private": true,
-  "author": "Your Name",
+  "author": "Ricardo Ocaña",
   "main": "dist/bootstrap.css",
   "themestrap": {
-    "name": "Themestrap Sample",
-    "repo": "https://github.com/divshot/themestrap"
+    "name": "PandaWeb",
+    "repo": "https://github.com/rocacua/pandaweb"
   },
   "ignore": [
     "**/.*",
@@ -16,6 +16,6 @@
     "tests"
   ],
   "dependencies": {
-    "bootstrap":"3.0.0"
+    "bootstrap":"3.1.1"
   }
 }

@@ -1,0 +1,17 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    Web developer: Ricardo Ocaña Gasco
+    Twitter: @Aiki_Panda
+    From: Zaragoza, Aragon, Spain
+
+# THANKS
+
+    Profesor: Rubén Ortega Santa Barbara
+
+# TECHNOLOGY COLOPHON
+
+    CSS3, HTML5
+    Apache Server Configs, jQuery, Modernizr, Normalize.css
