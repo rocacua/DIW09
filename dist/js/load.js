@@ -54,3 +54,7 @@
             )
         }
     );
+//Cargar Estilos de forma asincrona
+//window.onload = function() {
+    document.head.innerHTML += '<link async rel=stylesheet href=css/blueimp-gallery.min.css><link rel=stylesheet href=css/bootstrap-image-gallery.min.css><link href=css/bootstrap.min.css rel=stylesheet media=screen>';
+//};

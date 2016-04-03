@@ -36,7 +36,7 @@ if ($motivo != null){
 	$enviado  = mail($para, $asunto, $mensaje, "From: $origen");
 }
 if($enviado){
-*>
+*/
 ?> 
 -->
     <p class="exito">Su mensaje ha sido enviado correctamente.<br />
